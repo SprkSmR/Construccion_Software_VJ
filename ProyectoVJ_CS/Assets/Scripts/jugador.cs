@@ -34,10 +34,10 @@ public class jugador : MonoBehaviour
             Girar();
         }
         tocaPiso = Physics2D.OverlapCircle(tPiso.position, sPiso, lPiso);
-        cuerpo.velocity = new Vector2(movimiento*velocidad, cuerpo.velocity.y);
         if (!tocaPiso){
             return;
         }
+        cuerpo.velocity = new Vector2(movimiento*velocidad, cuerpo.velocity.y);
         movimiento = Input.GetAxis("Horizontal");
         if (Input.GetKey(KeyCode.Space)){
             cuerpo.AddForce(new Vector2(0, salto));

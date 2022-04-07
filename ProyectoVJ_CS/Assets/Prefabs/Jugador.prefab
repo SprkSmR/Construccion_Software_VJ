@@ -128,14 +128,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40a5d80b043556b4ba36add4ff1b1eaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movimiento: 0
-  salto: 20
+  velocidad: 10
+  salto: 35
+  salud: 10
   tPiso: {fileID: 6744935610459003115}
   lPiso:
     serializedVersion: 2
     m_Bits: 55
-  velocidad: 10
-  salud: 100
+  inventario: 0000000000000000000000000000000000000000
 --- !u!50 &6744935610869034028
 Rigidbody2D:
   serializedVersion: 4
