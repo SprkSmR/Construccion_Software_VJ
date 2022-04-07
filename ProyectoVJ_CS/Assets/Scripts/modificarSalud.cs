@@ -7,7 +7,7 @@ public class modificarSalud : MonoBehaviour
     [SerializeField] public float tiempoInicioEfecto;
     [SerializeField] int efecto;
 
-    private float tiempoEntreEfecto = 0;
+    private float tiempoEntreEfecto;
     
 
     private void OnTriggerStay2D(Collider2D other) {
@@ -23,8 +23,8 @@ public class modificarSalud : MonoBehaviour
     }
 
     private void provocarEfecto(ref int saludJugador){
-        Debug.Log(tiempoEntreEfecto);
         if (tiempoEntreEfecto <= 0){
+            new WaitForSeconds(tiempoInicioEfecto);
             saludJugador -= efecto;
             tiempoEntreEfecto = tiempoInicioEfecto;
         }
