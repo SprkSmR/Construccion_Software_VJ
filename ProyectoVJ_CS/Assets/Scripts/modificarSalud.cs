@@ -4,11 +4,22 @@ using UnityEngine;
 
 public class modificarSalud : MonoBehaviour
 {
-    [SerializeField] public float tiempoInicioEfecto;
+    [SerializeField] public float tiempoEfecto;
     [SerializeField] int efecto;
 
-    private float tiempoEntreEfecto;
+    private float tiempoRestante;
     
+    private void OnTriggerEnter2D(Collider2D other) {
+        if (other.tag == "Player"){
+            other.GetComponent<jugador>().salud -= efecto;
+        }   
+    }
+
+    private void OnCollisionEnter2D(Collision2D other) {
+        if (other.gameObject.tag == "Player"){
+            other.gameObject.GetComponent<jugador>().salud -= efecto;
+        }   
+    }
 
     private void OnTriggerStay2D(Collider2D other) {
         if (other.tag == "Player"){
@@ -23,13 +34,12 @@ public class modificarSalud : MonoBehaviour
     }
 
     private void provocarEfecto(ref int saludJugador){
-        if (tiempoEntreEfecto <= 0){
-            new WaitForSeconds(tiempoInicioEfecto);
+        if (tiempoRestante <= 0){
             saludJugador -= efecto;
-            tiempoEntreEfecto = tiempoInicioEfecto;
+            tiempoRestante = tiempoEfecto;
         }
         else{
-            tiempoEntreEfecto -= Time.deltaTime;
+            tiempoRestante -= Time.deltaTime;
         }
     }
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class jugador : MonoBehaviour
 {
@@ -9,6 +10,9 @@ public class jugador : MonoBehaviour
     [SerializeField] public int salud;
     [SerializeField] Transform tPiso;
     [SerializeField] LayerMask lPiso;
+    [SerializeField] Slider barraSalud;
+    [SerializeField] public Text contadorCodigos;
+    [SerializeField] public Text listaCodigos;
 
     Rigidbody2D cuerpo;
     bool varDerecha = true;
@@ -16,6 +20,7 @@ public class jugador : MonoBehaviour
     float sPiso = 0.2f;
     float movimiento;
 
+    public int codigosAcumulados;
     public int[] inventario = {0,0,0,0,0};
 
     // Start is called before the first frame update
@@ -27,6 +32,7 @@ public class jugador : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        barraSalud.value = salud;
         if (movimiento>0 && !varDerecha){
             Girar();
         }
@@ -51,7 +57,7 @@ public class jugador : MonoBehaviour
         transform.localScale = escala;
     }
 
-    bool probar(){
+    /*bool probar(){
         for (int i = 0; i < 5; i++){
             if (inventario[i] == 0){
                 Debug.Log("no waton");
@@ -60,5 +66,5 @@ public class jugador : MonoBehaviour
         }
         Debug.Log("si waton");
         return true;
-    }
+    }*/
 }

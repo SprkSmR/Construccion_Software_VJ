@@ -3,14 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class pausa : MonoBehaviour
+public class verCodigo : MonoBehaviour
 {
     bool juegoPausado = false;
     [SerializeField] GameObject panel;
 
+    void Start(){
+        VerCodigo();
+    }
+
     void Update()
     {
-        if (!Input.GetKeyDown(KeyCode.Escape)){
+        if (!Input.GetKeyDown(KeyCode.E)){
             return;
         }
 
@@ -18,7 +22,7 @@ public class pausa : MonoBehaviour
             Reanudar();
         }
         else{
-            Pausar();
+            VerCodigo();
         }
     }
 
@@ -28,21 +32,9 @@ public class pausa : MonoBehaviour
         Time.timeScale = 1f;
     }
 
-    public void Pausar(){
+    public void VerCodigo(){
         panel.SetActive(true);
         juegoPausado = true;
         Time.timeScale = 0f;
-    }
-
-    public void Menu(){
-        SceneManager.LoadScene("Scenes/menuPrincipal");
-    }
-
-    public void Salir(){
-        #if UNITY_EDITOR
-            UnityEditor.EditorApplication.isPlaying = false;
-        #else
-            Application.Quit();
-        #endif
     }
 }
