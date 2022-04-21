@@ -1,19 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class pausa : MonoBehaviour
 {
-    bool juegoPausado = false;
+    [SerializeField] KeyCode botonPausa = KeyCode.Escape;
     [SerializeField] GameObject panel;
 
+    bool juegoPausado = false;
+    
     void Update()
     {
-        if (!Input.GetKeyDown(KeyCode.Escape)){
+        if (!Input.GetKeyDown(botonPausa)){
             return;
         }
-
         if (juegoPausado){
             Reanudar();
         }
@@ -32,17 +32,5 @@ public class pausa : MonoBehaviour
         panel.SetActive(true);
         juegoPausado = true;
         Time.timeScale = 0f;
-    }
-
-    public void Menu(){
-        SceneManager.LoadScene("Scenes/menuPrincipal");
-    }
-
-    public void Salir(){
-        #if UNITY_EDITOR
-            UnityEditor.EditorApplication.isPlaying = false;
-        #else
-            Application.Quit();
-        #endif
     }
 }

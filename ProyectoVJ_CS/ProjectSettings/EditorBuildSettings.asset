@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/nivelPruebas.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/creditos.unity
+    guid: 041c781a00c4af14aaa71c07b6a0af64
   m_configObjects: {}
