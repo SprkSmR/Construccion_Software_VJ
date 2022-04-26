@@ -56,15 +56,4 @@ public class jugador : MonoBehaviour
         escala.x *= -1;
         transform.localScale = escala;
     }
-
-    /*bool probar(){
-        for (int i = 0; i < 5; i++){
-            if (inventario[i] == 0){
-                Debug.Log("no waton");
-                return false;
-            }
-        }
-        Debug.Log("si waton");
-        return true;
-    }*/
 }
