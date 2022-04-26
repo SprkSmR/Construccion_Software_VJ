@@ -9,6 +9,11 @@ public class pausa : MonoBehaviour
 
     bool juegoPausado = false;
     
+    void Start() {
+        panel.SetActive(false);
+        juegoPausado = false; 
+    }
+
     void Update()
     {
         if (!Input.GetKeyDown(botonPausa)){
@@ -29,8 +34,10 @@ public class pausa : MonoBehaviour
     }
 
     public void Pausar(){
-        panel.SetActive(true);
-        juegoPausado = true;
-        Time.timeScale = 0f;
+        if (Time.timeScale == 1f){
+            panel.SetActive(true);
+            juegoPausado = true;
+            Time.timeScale = 0f;
+        }
     }
 }

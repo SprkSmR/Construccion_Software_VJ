@@ -5,11 +5,14 @@ using UnityEngine;
 public class gameMaster : MonoBehaviour
 {
     [SerializeField] GameObject jugador;
+    [SerializeField] GameObject panelDerrota;
+    [SerializeField] GameObject panelVictoria;
     private int[] inventarioJugador;
     private int saludJugador;
 
     void Start()
     {
+        Time.timeScale = 1f;
         inventarioJugador = jugador.GetComponent<jugador>().inventario;
     }
 
@@ -17,10 +20,12 @@ public class gameMaster : MonoBehaviour
     void Update()
     {
         if (comprobarDerrota()){
-            Debug.Log("Has perdido");
+            panelDerrota.SetActive(true);
+            Time.timeScale = 0f;
         }
         if (comprobarVictoria()){
-            Debug.Log("Has ganado");
+            panelVictoria.SetActive(true);
+            Time.timeScale = 0f;
         }
     }
 

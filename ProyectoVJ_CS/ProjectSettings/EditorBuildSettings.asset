@@ -9,9 +9,15 @@ EditorBuildSettings:
     path: Assets/Scenes/menuPrincipal.unity
     guid: a19a3ded652adbe428c567796307c71d
   - enabled: 1
-    path: Assets/Scenes/nivelPruebas.unity
+    path: Assets/Scenes/nivel1.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/nivel2.unity
+    guid: e7b25462f5f4a404abaf0e76df4c5400
   - enabled: 1
     path: Assets/Scenes/creditos.unity
     guid: 041c781a00c4af14aaa71c07b6a0af64
+  - enabled: 1
+    path: Assets/Scenes/finJuego.unity
+    guid: 200182486000d8e4ea303e7119063ca0
   m_configObjects: {}
