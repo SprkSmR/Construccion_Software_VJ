@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidad: 10
-  salto: 40
+  salto: 60
   salud: 10
   tPiso: {fileID: 3614188012764397738}
   lPiso:
