@@ -130,8 +130,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8efa15705ac2fd6408593018608ce531, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidadMovimiento: 5
-  rangoMovimiento: 10
+  velocidadMovimiento: 1
+  rangoMovimiento: 5
   patrullando: 1
   distanciaAlejado: 0
   rangoAbsoluto: 0

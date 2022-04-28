@@ -14,6 +14,7 @@ public class jugador : MonoBehaviour
     [SerializeField] public Text contadorCodigos;
     [SerializeField] public Text listaCodigos;
 
+    Animator anim;
     Rigidbody2D cuerpo;
     bool varDerecha = true;
     bool tocaPiso = false;
@@ -26,6 +27,7 @@ public class jugador : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        anim = GetComponent<Animator>();
         cuerpo = GetComponent<Rigidbody2D>(); 
     }
 
@@ -33,6 +35,8 @@ public class jugador : MonoBehaviour
     void Update()
     {
         barraSalud.value = salud;
+        anim.SetFloat("mov", Mathf.Abs(movimiento));
+        anim.SetInteger("salud", salud);
         if (movimiento>0 && !varDerecha){
             Girar();
         }
@@ -40,6 +44,7 @@ public class jugador : MonoBehaviour
             Girar();
         }
         tocaPiso = Physics2D.OverlapCircle(tPiso.position, sPiso, lPiso);
+        anim.SetBool("tocaPiso", tocaPiso);
         if (!tocaPiso){
             return;
         }
@@ -55,5 +60,9 @@ public class jugador : MonoBehaviour
         Vector3 escala = transform.localScale;
         escala.x *= -1;
         transform.localScale = escala;
+    }
+
+    public void sufrir(){
+        anim.SetTrigger("recibeDano");
     }
 }

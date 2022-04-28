@@ -27,7 +27,7 @@ public class gameMaster : MonoBehaviour
             return;
         }
         tiempoNivel += Time.deltaTime;
-        contadorTiempo.text = tiempoNivel.ToString() + "s";
+        contadorTiempo.text = tiempoNivel.ToString() + " s";
         if (comprobarDerrota()){
             tiempo.tiempoTranscurrido += tiempoNivel;
             panelDerrota.SetActive(true);

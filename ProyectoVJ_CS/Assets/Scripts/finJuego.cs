@@ -10,7 +10,7 @@ public class finJuego : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        contadorTiempo.text = tiempo.tiempoTranscurrido.ToString() + "s";
+        contadorTiempo.text = tiempo.tiempoTranscurrido.ToString() + " s";
         if (tiempo.tiempoTranscurrido <= 5f){
             mensaje.text = "No tengo idea de como hiciste eso, pero felicidades.";
         }
@@ -24,10 +24,10 @@ public class finJuego : MonoBehaviour
             mensaje.text = "Nada mal, puede mejorar.";
         }
         else if (tiempo.tiempoTranscurrido > 25f && tiempo.tiempoTranscurrido <= 60f){
-            mensaje.text = "Aceptable";
+            mensaje.text = "Aceptable.";
         }
         else if (tiempo.tiempoTranscurrido > 60f){
-            mensaje.text = "AAAAAA ERES MALOOOOOOOOOOO";
+            mensaje.text = "Puedes mejorar tu tiempo.";
         }
     }
 }
