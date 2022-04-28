@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 649219bfa63f08c49812ec155c070d59
+guid: 266c537311f893545a96cf19419cd13a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3650293041398594259
-    second: UI_TOPpx_0
+      213: 509682332185767275
+    second: BUTTON_CONTINUARpx_0
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -50,11 +50,11 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteBorder: {x: 2, y: 6, z: 2, w: 6}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
-  spriteTessellationDetail: -1
+  spriteTessellationDetail: 0
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
@@ -94,13 +94,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: UI_TOPpx_0
+      name: BUTTON_CONTINUARpx_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 150
-        width: 156
-        height: 6
+        x: 2
+        y: 6
+        width: 28
+        height: 20
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -108,13 +108,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3dab4aa5e2278a230800000000000000
-      internalID: 3650293041398594259
+      spriteID: b6da9367161c21700800000000000000
+      internalID: 509682332185767275
       vertices: []
       indices: 
       edges: []
       weights: []
-    outline: []
+    outline:
+    - - {x: -14, y: -11}
+      - {x: -14, y: 10}
+      - {x: 15, y: 10}
+      - {x: 15, y: -11}
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
