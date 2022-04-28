@@ -7,11 +7,12 @@ public class enemigo : MonoBehaviour
     [SerializeField] protected float velocidadMovimiento;
     [SerializeField] private float rangoMovimiento;
     [SerializeField] protected bool patrullando;
-    private bool puedeGirar;
     [SerializeField] private float distanciaAlejado;
     [SerializeField] private float rangoAbsoluto;
+    
     private float distanciaOrigen {get => transform.position.x - transform.parent.position.x;}
     private Rigidbody2D rb;
+    private bool puedeGirar;
 
     private void Awake(){
         rb = GetComponent<Rigidbody2D>();
