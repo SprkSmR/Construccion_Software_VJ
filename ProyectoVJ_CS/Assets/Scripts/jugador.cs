@@ -5,21 +5,22 @@ using UnityEngine.UI;
 
 public class jugador : MonoBehaviour
 {
-    [SerializeField] float velocidad;
-    [SerializeField] float salto;
+    [SerializeField] public float velocidad;
     [SerializeField] public int salud;
+    [SerializeField] public Text contadorCodigos;
+    [SerializeField] public Text listaCodigos;
+    [SerializeField] float salto;
     [SerializeField] Transform tPiso;
     [SerializeField] LayerMask lPiso;
     [SerializeField] Slider barraSalud;
-    [SerializeField] public Text contadorCodigos;
-    [SerializeField] public Text listaCodigos;
-
+    
+    public bool tocaPiso = false;
+    
+    float movimiento;
     Animator anim;
     Rigidbody2D cuerpo;
     bool varDerecha = true;
-    bool tocaPiso = false;
-    float sPiso = 0.2f;
-    float movimiento;
+    float sPiso = 0.1107f;
 
     public int codigosAcumulados;
     public int[] inventario = {0,0,0,0,0};
@@ -51,6 +52,7 @@ public class jugador : MonoBehaviour
         cuerpo.velocity = new Vector2(movimiento*velocidad, cuerpo.velocity.y);
         movimiento = Input.GetAxis("Horizontal");
         if (Input.GetKey(KeyCode.Space)){
+            tocaPiso = false;
             cuerpo.AddForce(new Vector2(0, salto));
         }
     }

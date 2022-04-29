@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 829795797091821665}
   - component: {fileID: 829795797091821666}
   - component: {fileID: 829795797091821667}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Peligro
   m_TagString: Untagged
   m_Icon: {fileID: 0}

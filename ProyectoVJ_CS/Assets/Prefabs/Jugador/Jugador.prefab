@@ -100,15 +100,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidad: 2.4
-  salto: 200
   salud: 10
+  contadorCodigos: {fileID: 0}
+  listaCodigos: {fileID: 0}
+  salto: 175
   tPiso: {fileID: 3614188012764397738}
   lPiso:
     serializedVersion: 2
     m_Bits: 136
   barraSalud: {fileID: 0}
-  contadorCodigos: {fileID: 0}
-  listaCodigos: {fileID: 0}
+  tocaPiso: 0
   codigosAcumulados: 0
   inventario: 0000000000000000000000000000000000000000
 --- !u!50 &3614188012277824059
@@ -188,7 +189,7 @@ GameObject:
   - component: {fileID: 3614188012764397738}
   m_Layer: 6
   m_Name: Piso
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -201,7 +202,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3614188012764397739}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.063, z: 0}
+  m_LocalPosition: {x: 0, y: -0.1107, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3614188012981661806}

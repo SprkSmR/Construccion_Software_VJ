@@ -13,6 +13,7 @@ public class modificarSalud : MonoBehaviour
         if (other.tag == "Player"){
             other.GetComponent<jugador>().salud -= efecto;
             other.GetComponent<jugador>().sufrir();
+            other.GetComponent<Rigidbody2D>().AddForce(new Vector2((other.GetComponent<Rigidbody2D>().velocity.x)*10, (other.GetComponent<Rigidbody2D>().velocity.y+5)*10));
         }   
     }
 
@@ -20,6 +21,7 @@ public class modificarSalud : MonoBehaviour
         if (other.gameObject.tag == "Player"){
             other.gameObject.GetComponent<jugador>().salud -= efecto;
             other.gameObject.GetComponent<jugador>().sufrir();
+            other.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2((other.gameObject.GetComponent<Rigidbody2D>().velocity.x)*10, (other.gameObject.GetComponent<Rigidbody2D>().velocity.y+5)*10));
         }   
     }
 
