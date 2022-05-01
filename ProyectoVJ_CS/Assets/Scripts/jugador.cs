@@ -13,6 +13,10 @@ public class jugador : MonoBehaviour
     [SerializeField] Transform tPiso;
     [SerializeField] LayerMask lPiso;
     [SerializeField] Slider barraSalud;
+    [SerializeField] AudioSource efectos;
+    [SerializeField] AudioClip dolor;
+    [SerializeField] AudioClip saltar;
+    [SerializeField] AudioClip caminar; 
     
     public bool tocaPiso = false;
     
@@ -40,6 +44,7 @@ public class jugador : MonoBehaviour
         anim.SetInteger("salud", salud);
         if (movimiento>0 && !varDerecha){
             Girar();
+            
         }
         else if (movimiento<0 && varDerecha){
             Girar();
@@ -51,7 +56,16 @@ public class jugador : MonoBehaviour
         }
         cuerpo.velocity = new Vector2(movimiento*velocidad, cuerpo.velocity.y);
         movimiento = Input.GetAxis("Horizontal");
+        if (movimiento != 0){
+            efectos.clip = caminar;
+            efectos.Play();
+        }
+        else if (movimiento == 0 && efectos.clip == caminar){
+            efectos.Pause();
+        }
         if (Input.GetKey(KeyCode.Space)){
+            efectos.clip = saltar;
+            efectos.Play();
             tocaPiso = false;
             cuerpo.AddForce(new Vector2(0, salto));
         }
@@ -65,6 +79,8 @@ public class jugador : MonoBehaviour
     }
 
     public void sufrir(){
+        efectos.clip = dolor;
+        efectos.Play();
         anim.SetTrigger("recibeDano");
     }
 }

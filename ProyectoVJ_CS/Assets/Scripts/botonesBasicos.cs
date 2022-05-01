@@ -5,7 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class botonesBasicos : MonoBehaviour
 {
+    [SerializeField] AudioSource efectos;
+
     public void Salir(){
+        efectos.Play();
         #if UNITY_EDITOR
             UnityEditor.EditorApplication.isPlaying = false;
         #else
@@ -14,6 +17,7 @@ public class botonesBasicos : MonoBehaviour
     }
 
     public void Menu(){
+        efectos.Play();
         SceneManager.LoadScene("Scenes/menuPrincipal");
     }
 }

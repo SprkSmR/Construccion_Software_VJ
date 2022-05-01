@@ -6,6 +6,7 @@ public class pausa : MonoBehaviour
 {
     [SerializeField] KeyCode botonPausa = KeyCode.Escape;
     [SerializeField] GameObject panel;
+    [SerializeField] AudioSource efectos;
 
     bool juegoPausado = false;
     
@@ -28,6 +29,7 @@ public class pausa : MonoBehaviour
     }
 
     public void Reanudar(){
+        efectos.Play();
         panel.SetActive(false);
         juegoPausado = false;
         Time.timeScale = 1f;
@@ -35,6 +37,7 @@ public class pausa : MonoBehaviour
 
     public void Pausar(){
         if (Time.timeScale == 1f){
+            efectos.Play();
             panel.SetActive(true);
             juegoPausado = true;
             Time.timeScale = 0f;

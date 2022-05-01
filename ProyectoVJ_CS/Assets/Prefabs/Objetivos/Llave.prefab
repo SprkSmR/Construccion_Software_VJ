@@ -99,6 +99,8 @@ MonoBehaviour:
   numeroLlave: 0
   caracter: 
   campoFaltante: {fileID: 0}
+  efectos: {fileID: 0}
+  recogido: {fileID: 8300000, guid: cf473efbec7347f44a3c4b208795a287, type: 3}
 --- !u!61 &1852176566588179363
 BoxCollider2D:
   m_ObjectHideFlags: 0
