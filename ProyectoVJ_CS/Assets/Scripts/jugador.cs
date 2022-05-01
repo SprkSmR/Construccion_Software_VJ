@@ -10,8 +10,6 @@ public class jugador : MonoBehaviour
     [SerializeField] public Text contadorCodigos;
     [SerializeField] public Text listaCodigos;
     [SerializeField] float salto;
-    [SerializeField] Transform tPiso;
-    [SerializeField] LayerMask lPiso;
     [SerializeField] Slider barraSalud;
     [SerializeField] AudioSource efectos;
     [SerializeField] AudioClip dolor;
@@ -24,7 +22,6 @@ public class jugador : MonoBehaviour
     Animator anim;
     Rigidbody2D cuerpo;
     bool varDerecha = true;
-    float sPiso = 0.1107f;
 
     public int codigosAcumulados;
     public int[] inventario = {0,0,0,0,0};
@@ -49,7 +46,6 @@ public class jugador : MonoBehaviour
         else if (movimiento<0 && varDerecha){
             Girar();
         }
-        tocaPiso = Physics2D.OverlapCircle(tPiso.position, sPiso, lPiso);
         anim.SetBool("tocaPiso", tocaPiso);
         if (!tocaPiso){
             return;
