@@ -39,19 +39,10 @@ public class jugador : MonoBehaviour
         barraSalud.value = salud;
         anim.SetFloat("mov", Mathf.Abs(movimiento));
         anim.SetInteger("salud", salud);
-        if (movimiento>0 && !varDerecha){
-            Girar();
-
-        }
-        else if (movimiento<0 && varDerecha){
-            Girar();
-        }
         anim.SetBool("tocaPiso", tocaPiso);
         if (!tocaPiso){
             return;
         }
-        cuerpo.velocity = new Vector2(movimiento*velocidad, cuerpo.velocity.y);
-        movimiento = Input.GetAxis("Horizontal");
         if (movimiento != 0){
             efectos.clip = caminar;
             efectos.Play();
@@ -62,6 +53,22 @@ public class jugador : MonoBehaviour
         if (Input.GetKey(KeyCode.Space)){
             efectos.clip = saltar;
             efectos.Play();
+        }
+    }
+
+    void FixedUpdate() {
+        if (movimiento>0 && !varDerecha){
+            Girar();
+        }
+        else if (movimiento<0 && varDerecha){
+            Girar();
+        }
+        if (!tocaPiso){
+            return;
+        }
+        cuerpo.velocity = new Vector2(movimiento*velocidad, cuerpo.velocity.y);
+        movimiento = Input.GetAxis("Horizontal");
+        if (Input.GetKey(KeyCode.Space)){
             tocaPiso = false;
             cuerpo.AddForce(new Vector2(0, salto));
         }
