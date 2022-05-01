@@ -16,15 +16,15 @@ public class jugador : MonoBehaviour
     [SerializeField] AudioSource efectos;
     [SerializeField] AudioClip dolor;
     [SerializeField] AudioClip saltar;
-    [SerializeField] AudioClip caminar; 
-    
+    [SerializeField] AudioClip caminar;
+
     public bool tocaPiso = false;
-    
+
     float movimiento;
     Animator anim;
     Rigidbody2D cuerpo;
     bool varDerecha = true;
-    float sPiso = 0.1107f;
+    float sPiso = 0.1f;
 
     public int codigosAcumulados;
     public int[] inventario = {0,0,0,0,0};
@@ -33,7 +33,7 @@ public class jugador : MonoBehaviour
     void Start()
     {
         anim = GetComponent<Animator>();
-        cuerpo = GetComponent<Rigidbody2D>(); 
+        cuerpo = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -44,7 +44,7 @@ public class jugador : MonoBehaviour
         anim.SetInteger("salud", salud);
         if (movimiento>0 && !varDerecha){
             Girar();
-            
+
         }
         else if (movimiento<0 && varDerecha){
             Girar();
