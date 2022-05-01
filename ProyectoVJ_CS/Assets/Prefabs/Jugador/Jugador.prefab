@@ -171,7 +171,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidad: 2.4
-  salud: 10
+  salud: 12
   contadorCodigos: {fileID: 0}
   listaCodigos: {fileID: 0}
   salto: 175
