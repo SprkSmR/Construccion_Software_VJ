@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5979788786473474691}
   m_Layer: 7
-  m_Name: Nodo_Enemigo
+  m_Name: Nodo_Enemigo_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -131,7 +131,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidadMovimiento: 1
-  rangoMovimiento: 1.5
+  rangoMovimiento: 1.2
   patrullando: 1
   distanciaAlejado: 0
   rangoAbsoluto: 0
